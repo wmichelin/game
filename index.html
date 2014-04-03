@@ -11,12 +11,36 @@
 	Hello World
 	</h1>
 	</div>
-	<canvas id="myCanvas" width = 1000 height = 500></canvas>
+	<canvas id="myCanvas" width = 1001 height = 501></canvas>
 	<script>
 	var canvas=document.getElementById('myCanvas');
 	var ctx=canvas.getContext('2d');
-	ctx.fillStyle='#FF0000';
-	ctx.fillRect(0,0,80,100);
+
+	var bw = 1000;
+	var bh = 500;
+	var p = 0;
+	var cw = bw + (p*2) + 1;
+	var ch = bh + (p*2) + 1;
+
+	function drawBoard()
+	{
+		for(var x = 0; x <= bw; x += 50)
+		{
+			ctx.moveTo(0.5 + x + p, p);
+			ctx.lineTo(0.5 + x + p, bh + p);
+		}
+
+		for(var x = 0; x <= bh; x += 50)
+		{
+			ctx.moveTo(p, 0.5 + x + p);
+			ctx.lineTo(bw + p, 0.5 + x + p);
+		}
+
+		ctx.strokeStyle = "black";
+		ctx.stroke();
+	}
+
+	drawBoard();
 	</script>
 </body>
 </html>

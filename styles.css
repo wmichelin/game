@@ -8,8 +8,9 @@ body{
 
 #mycanvas{
 	background-color: white;
-	margin: auto;
-	display: block;
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
 }
 
 div{
